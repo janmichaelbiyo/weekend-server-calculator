@@ -40,8 +40,23 @@ app.post('/calculations', (req,res) =>{
   console.log (`lets go`, letsCalculate);
   
   if (letsCalculate.operator == '+'){
-    calculateTotal = letsCalculate.numOne + letsCalculate.numTwo 
-    Object.assign(letsCalculate, {result: calculateTotal})
+    calculateTotal = letsCalculate.numOne + letsCalculate.numTwo; 
+    Object.assign(letsCalculate, {result: calculateTotal});
+  } 
+
+  if (letsCalculate.operator == '-'){
+    calculateTotal = letsCalculate.numOne - letsCalculate.numTwo;
+    Object.assign(letsCalculate, {result: calculateTotal});
+  }
+
+  if (letsCalculate.operator == '*'){
+    calculateTotal = letsCalculate.numOne * letsCalculate.numTwo;
+    Object.assign(letsCalculate, {result: calculateTotal});
+  }
+
+  if (letsCalculate.operator == '/'){
+    calculateTotal = letsCalculate.numOne / letsCalculate.numTwo;
+    Object.assign(letsCalculate, {result: calculateTotal});
   }
     calculations.push(letsCalculate)
     console.log(letsCalculate)
