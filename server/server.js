@@ -8,18 +8,18 @@ app.use(express.static('server/public'));
 // Global variable that will contain all of the
 // calculation objects:
 let calculations = [  
-  {
-    numOne: 3,
-    numTwo: 5,
-    operator: '+',
-    result: 8
-  },
-  {
-    numOne: 11,
-    numTwo: 7,
-    operator: '-',
-    result: 4
-  }
+  // {
+  //   numOne: 3,
+  //   numTwo: 5,
+  //   operator: '+',
+  //   result: 8
+  // },
+  // {
+  //   numOne: 11,
+  //   numTwo: 7,
+  //   operator: '-',
+  //   result: 4
+  // }
 ]
 
 
@@ -33,6 +33,22 @@ app.get('/calculations', (req, res) => {
 
 
 // POST /calculations
+
+app.post('/calculations', (req,res) =>{
+  const letsCalculate = req.body;
+  let calculateTotal = 0
+  console.log (`lets go`, letsCalculate);
+  
+  if (letsCalculate.operator == '+'){
+    calculateTotal = letsCalculate.numOne + letsCalculate.numTwo 
+    Object.assign(letsCalculate, {result: calculateTotal})
+  }
+    calculations.push(letsCalculate)
+    console.log(letsCalculate)
+    
+
+  res.sendStatus(201)
+});
 
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
