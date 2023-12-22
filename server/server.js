@@ -39,13 +39,7 @@ app.post('/calculations', (req,res) =>{
   let calculateTotal = 0
   console.log (`lets go`, letsCalculate);
   
-  // if (
-  //   typeof letsCalculate.numOne !== 'number' ||
-  //   typeof letsCalculate.numTwo !== 'number'
-  // ) {
-  //   res.sendStatus(400);
-  //   return;
-  // }
+  
 
   if (letsCalculate.operator == '+'){
     calculateTotal =parseInt(letsCalculate.numOne) + Number(letsCalculate.numTwo); 

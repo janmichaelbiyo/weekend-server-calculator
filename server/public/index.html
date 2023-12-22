@@ -9,17 +9,18 @@
   <body>
     <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
-      <input placeholder="First Number">
-      <button>+</button>
-      <button>-</button>
-      <button>*</button>
-      <button>/</button>
-      <input placeholder="Second Number">
-      <button>=</button>
-      <button>C</button>
+    <form data-testid="calculator" onsubmit="event.preventDefault()">
+      <input placeholder="First Number" id="numberOne">
+      <label id="operate"> </label>
+      <button onclick="letsOperator(event)">+</button>
+      <button onclick="letsOperator(event)">-</button>
+      <button onclick="letsOperator(event)">*</button>
+      <button onclick="letsOperator(event)">/</button>
+      <input placeholder="Second Number" id="numberTwo">
+      <button onclick="submitCalculations(event)">=</button>
+      <button onclick="letClear()">C</button>
     </form>
-
+   
     <section data-testid="recentResult" id="recentResult">
       <!-- The most recent calculation result goes here. -->
       <ul>
