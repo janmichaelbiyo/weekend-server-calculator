@@ -39,7 +39,15 @@ function letsOperator(event){
     opoElement.innerHTML = event.target.innerText   
     console.log(opoElement.innerHTML)
 }
+
+// function letClear(event){
+//     let posOne = document.getElementById('#numberOne').innerText; 
+//     let posTwo = document.querySelector('#numberTwo').innerHTML;
+//     // posOne = '';
+//     console.log(posOne);
     
+
+// }
 
 function submitCalculations(event){ 
    
@@ -65,10 +73,24 @@ function submitCalculations(event){
     }) .then ((response) => {
         const calculateElement = document.querySelector('#resultHistory');
         calculateElement.innerHTML = '';
-        calculationTime()
+        calculationTime();
 
     }) .catch(function(error){
         console.error('somethings wrong')
     })
+}
+
+
+
+function letClear(event){
+    let posOne = document.querySelector('#numberOne');
+    let posTwo = document.querySelector('#numberTwo');
+    
+    posOne.value = ''
+    posTwo.value = ''
+    // clearPosOne = document.querySelector('#numberOne').innerHTML;
+    console.log(posOne)
+
+
 }
 
