@@ -65,7 +65,7 @@ function submitCalculations(event){
     
     console.log(operatorArray)
     opoOpe = operatorArray.pop()
-    // opoOpe = operatorArray.toString()
+    
     console.log(opoOpe);
     
 
