@@ -34,11 +34,16 @@ function calculationTime(){
 
 calculationTime();
 
+let operatorArray = [];
 function letsOperator(event){
-    let opoElement = document.querySelector('#operate');
-    opoElement.innerHTML = event.target.innerText   
-    console.log(opoElement.innerHTML)
+   
+    // let opoElement = document.querySelector('#operate');
+    operatorArray.push(event.target.innerText)   
+    console.log(operatorArray);
 }
+
+
+
 
 // function letClear(event){
 //     let posOne = document.getElementById('#numberOne').innerText; 
@@ -54,9 +59,14 @@ function submitCalculations(event){
     event.preventDefault();
     let oneNum = document.querySelector('#numberOne');
     let twoNum = document.querySelector('#numberTwo'); 
-    let opoElement = document.querySelector('#operate');
-     console.log('yo yo', opoElement.innerHTML); 
-    let opoOpe = opoElement.innerHTML;
+    // let opoElement = document.querySelector('#operate');
+    //  console.log('yo yo', opoElement.innerHTML); 
+    // let opoOpe = opoElement.innerHTML;
+    
+    console.log(operatorArray)
+    opoOpe = operatorArray.pop()
+    // opoOpe = operatorArray.toString()
+    console.log(opoOpe);
     
 
     
