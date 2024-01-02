@@ -8,6 +8,7 @@ app.use(express.static('server/public'));
 // Global variable that will contain all of the
 // calculation objects:
 let calculations = [  
+  //this are my test objects nothing but tests
   // {
   //   numOne: 3,
   //   numTwo: 5,
@@ -34,7 +35,7 @@ app.get('/calculations', (req, res) => {
 
 // POST /calculations
 
-app.post('/calculations', (req,res) =>{
+app.post('/calculations', (req, res) =>{
   const letsCalculate = req.body;
   let calculateTotal = 0
   console.log (`lets go`, letsCalculate);
@@ -47,17 +48,17 @@ app.post('/calculations', (req,res) =>{
   } 
 
   if (letsCalculate.operator == '-'){
-    calculateTotal = letsCalculate.numOne - letsCalculate.numTwo;
+    calculateTotal = Number(letsCalculate.numOne) - Number(letsCalculate.numTwo);
     Object.assign(letsCalculate, {result: calculateTotal});
   }
 
   if (letsCalculate.operator == '*'){
-    calculateTotal = letsCalculate.numOne * letsCalculate.numTwo;
+    calculateTotal = Number(letsCalculate.numOne) * Number(letsCalculate.numTwo);
     Object.assign(letsCalculate, {result: calculateTotal});
   }
 
   if (letsCalculate.operator == '/'){
-    calculateTotal = letsCalculate.numOne / letsCalculate.numTwo;
+    calculateTotal = Number(letsCalculate.numOne) / Number(letsCalculate.numTwo);
     Object.assign(letsCalculate, {result: calculateTotal});
   }
     calculations.push(letsCalculate)
